@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles/App.css";
+import "./styles/UsersList.css";
+import "./styles/UserPage.css";
+import "./styles/Loading.css";
+import "./styles/Search.css";
+import { RouterProvider } from "react-router-dom";
+import router from "./Router";
+import React from "react";
+import { SearchProvider } from "./SearchProvider";
+
+export const SearchContext = React.createContext();
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <div className="bg"></div> 
+      <SearchProvider>
+        <RouterProvider router={router} />
+      </SearchProvider>
     </div>
   );
 }
-
 export default App;

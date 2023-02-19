@@ -1,0 +1,34 @@
+.userphotowrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .userphotowrap > img {
+    border-radius: 20px;
+    border: 10px #888888 solid;
+  }
+  .userpagewrap {
+    margin: 2rem 0 0  2rem;
+    width: 350px;
+  }
+.infoGrid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    width: 250px;
+    gap:0px 10px
+}
+
+  .infoGrid > svg {
+    margin: 1rem 0rem;
+    width: fit-content;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #aaaaaa;
+    padding: 4px;
+    border-radius: 50px;
+    border: 5px #888888 solid;
+    display: inline;
+    justify-self: end;
+    
+  }
