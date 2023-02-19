@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { json, useParams } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import GiMailbox from "./icons/FcAddressBook";
@@ -10,24 +10,33 @@ import CgWorkAlt from "./icons/CgWorkAlt";
 import FaMapMarkerAlt from "./icons/FaMapMarkerAlt";
 import Address from "./Address";
 import Loading from "./Loading";
+import ErrorPage from "./ErrorPage";
 
 const UserPage = () => {
   const [user, setUser] = useState(null);
   const { id } = useParams();
+  const [error, setError] = useState(false);
+
+ 
 
   useEffect(() => {
     const dataFetch = async () => {
+      if(isNaN(id)) 
+      {
+        setError(true);
+        return;
+      }
       const data = await (
         await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
-      ).json();
-      console.log(data);
+      )/json();
       setUser(data);
     };
 
     dataFetch();
   }, [id]);
 
-   if(user == null) return <Loading/>;
+  if(user == null) return <Loading/>;
+  if(error) return <ErrorPage/>
   return (
     <>
       <Header />
