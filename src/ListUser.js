@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const ListUser = ({ user }) => {
   return (
-    <Link to={`${user.id}`}>
+    <div>
       <div className="listUser">
         <h2 className="listUserTitle">{user.username}</h2>
         <div className="fauser">
@@ -19,7 +19,7 @@ const ListUser = ({ user }) => {
           {user.phone}
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

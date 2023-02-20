@@ -1,12 +1,10 @@
 import "./styles/App.css";
 import "./styles/UsersList.css";
-import "./styles/UserPage.css";
 import "./styles/Loading.css";
 import "./styles/Search.css";
-import { RouterProvider } from "react-router-dom";
-import router from "./Router";
 import React from "react";
 import { SearchProvider } from "./SearchProvider";
+import UsersList from "./UsersList";
 
 export const SearchContext = React.createContext();
 
@@ -15,7 +13,7 @@ function App() {
     <div className="App">
        <div className="bg"></div> 
       <SearchProvider>
-        <RouterProvider router={router} />
+       <UsersList/>
       </SearchProvider>
     </div>
   );
